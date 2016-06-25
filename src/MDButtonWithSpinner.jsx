@@ -5,29 +5,30 @@ import MDButton from 'mdbutton';
 const MDButtonWithSpinner = (props) => {
   const {
     onClick,
-    buttonText,
     buttonTheme,
     isDisabled,
+    children,
+    showSpinner,
   } = props;
 
   const buttonProps = {};
 
   if (!!onClick) { buttonProps.onClick = onClick; }
-  if (!!buttonText) { buttonProps.text = buttonText; }
   if (!!buttonTheme) { buttonProps.theme = buttonTheme; }
   if (!!isDisabled) { buttonProps.isDisabled = isDisabled; }
 
-  return (
-    <MDButton {...buttonProps} >
-      <Spinner spinnerName="pulse" />
-    </MDButton>
-  );
+  let content;
+  if (!!showSpinner) {
+    content = <Spinner spinnerName="pulse" />;
+  } else {
+    content = <MDButton {...buttonProps} > { children } </MDButton>;
+  }
+  return content;
 };
 
 MDButtonWithSpinner.propTypes = {
   onClick: PropTypes.func,
-  isWaiting: PropTypes.bool,
-  buttonText: PropTypes.string,
+  showSpinner: PropTypes.bool,
   buttonTheme: PropTypes.string,
   isDisabled: PropTypes.bool,
 };

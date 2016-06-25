@@ -19,7 +19,7 @@
     }
   },
   "dependencies": {
-    "mdbutton": "0.0.2",
+    "mdbutton": "0.0.4",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-spinkit": "1.1.7"
