@@ -9,13 +9,16 @@ const MDButtonWithSpinner = (props) => {
     buttonTheme,
     isDisabled,
   } = props;
+
+  const buttonProps = {};
+
+  if (!!onClick) { buttonProps.onClick = onClick; }
+  if (!!buttonText) { buttonProps.text = buttonText; }
+  if (!!buttonTheme) { buttonProps.theme = buttonTheme; }
+  if (!!isDisabled) { buttonProps.isDisabled = isDisabled; }
+
   return (
-    <MDButton
-      onClick={ !!onClick ? onClick : null}
-      theme={buttonTheme}
-      isDisabled={isDisabled}
-      text={buttonText}
-    >
+    <MDButton {...buttonProps} >
       <Spinner spinnerName="pulse" />
     </MDButton>
   );
