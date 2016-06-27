@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack && webpack-dev-server",
+    "compile": "npm-run-all --parallel compile:source compile:postcss",
     "compile:postcss": "postcss  --use precss --use postcss-cssnext -d lib src/*.css",
     "compile:source": "babel src --out-dir lib --ignore src/**/*.spec.js",
     "clean": "rimraf lib dist",
-    "prepublish": "npm-run-all clean --parallel compile:source compile:postcss",
+    "prepublish": "npm-run-all clean compile",
+    "test:watch": "mocha --watch",
     "test": "mocha"
   },
   "keywords": [],
