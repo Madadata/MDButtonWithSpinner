@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack && webpack-dev-server",
     "compile:postcss": "postcss  --use precss --use postcss-cssnext -d lib src/*.css",
-    "compile:source": "babel src --out-dir lib",
+    "compile:source": "babel src --out-dir lib --ignore src/**/*.spec.js",
     "clean": "rimraf lib dist",
     "prepublish": "npm-run-all clean --parallel compile:source compile:postcss",
     "test": "mocha --require babel-register --require ignore-styles src/__tests__/**.spec.js"
