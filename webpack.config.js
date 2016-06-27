@@ -1,5 +1,6 @@
 const cssnext = require('postcss-cssnext');
 const precss = require('precss');
+const path = require('path');
 
 module.exports = {
   entry: './main.js',
@@ -31,7 +32,7 @@ module.exports = {
         test: /\.css$/,
         loader: 'style!css!postcss'
       }
-    ]
+    ],
   },
   postcss: function() {
     return [
