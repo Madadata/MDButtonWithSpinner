@@ -1,8 +1,9 @@
 # MDButtonWithSpinner
-[![npm](https://img.shields.io/npm/dm/localeval.svg?maxAge=2592000)]()
-[![VersionEye](https://img.shields.io/versioneye/d/ruby/rails.svg?maxAge=2592000)]()
-[![DUB](https://img.shields.io/dub/l/vibe-d.svg?maxAge=2592000)]()
+[![GitHub issues](https://img.shields.io/github/issues/Madadata/MDButtonWithSpinner.svg)](https://github.com/Madadata/MDButtonWithSpinner/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Madadata/MDButtonWithSpinner/master/LICENSE)
+[![GitHub version](https://badge.fury.io/gh/Madadata%2FMDButtonWithSpinner.svg)](https://badge.fury.io/gh/Madadata%2FMDButtonWithSpinner)
 
+[![NPM](https://nodei.co/npm/mdbuttonwithspinner.png)](https://nodei.co/npm/mdbuttonwithspinner/)
 # Note:
 
 1. A simple react button with spinner.
