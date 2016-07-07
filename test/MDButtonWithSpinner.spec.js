@@ -19,30 +19,24 @@ describe('MDButtonWithSpinner', () => {
   });
 
   it('should render pulse Spinner if showSpiner equals true', () => {
-    const renderer = createRenderer();
-    renderer.render(
+    const wrapper = shallow(
       <MDButtonWithSpinner
         showSpinner
       />
     );
-    const actualElement = renderer.getRenderOutput();
-    const expectedElement = <Spinner spinnerName="pulse"/>;
-    expect(actualElement.props.spinnerName).toEqual('pulse');
-    expect(actualElement).toIncludeJSX(expectedElement);
-  })
+    expect(wrapper.props().spinnerName).toBe('pulse')
+  });
 
   it('should render children', () => {
-    const renderer = createRenderer();
-    renderer.render(
+    const wrapper = shallow(
       <MDButtonWithSpinner
         showSpinner={false}
       >
         <div>Hello world</div>
       </MDButtonWithSpinner>
-    );
-    const actualElement = renderer.getRenderOutput();
-    expect(actualElement.props.children[1].type).toEqual('div');
-  })
+    )
+    expect(wrapper.childAt(0).type()).toBe('div');
+  });
 
   it('should not props onClick down if there is no specified onClick method', () => {
     const wrapper = shallow(
