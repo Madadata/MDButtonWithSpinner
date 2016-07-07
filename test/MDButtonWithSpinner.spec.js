@@ -1,6 +1,7 @@
-import React from 'react'
-import expect from 'expect'
-import { createRenderer } from 'react-addons-test-utils'
+import React from 'react';
+import expect from 'expect';
+import { createRenderer } from 'react-addons-test-utils';
+import { shallow } from 'enzyme';
 import expectJSX from 'expect-jsx'
 expect.extend(expectJSX);
 import MDButtonWithSpinner from 'src/MDButtonWithSpinner';
@@ -10,15 +11,11 @@ import Spinner from 'react-spinkit';
 describe('MDButtonWithSpinner', () => {
 
   it('should render MDButton if showSpinner equals false', () => {
-    const renderer = createRenderer();
-    renderer.render(
-      <MDButtonWithSpinner
-        showSpinner={false}
-      />
+    const wrapper = shallow(
+      <MDButtonWithSpinner showSpinner={false} />
     );
-    const actualElement = renderer.getRenderOutput();
-    const expectedElement = <MDButton>{' '}</MDButton>;
-    expect(actualElement).toIncludeJSX(expectedElement);
+    const mdbutton = wrapper.find('MDButton');
+    expect(mdbutton.length).toEqual(1);
   });
 
   it('should render pulse Spinner if showSpiner equals true', () => {
@@ -48,10 +45,10 @@ describe('MDButtonWithSpinner', () => {
   })
 
   it('should not props onClick down if there is no specified onClick method', () => {
-    const renderer = createRenderer();
-    renderer.render(<MDButtonWithSpinner />);
-    const actualElement = renderer.getRenderOutput();
-    expect(actualElement.props.onClick).toNotExist();
+    const wrapper = shallow(
+      <MDButtonWithSpinner />
+    );
+    expect(wrapper.props().onClick).toNotExist();
   })
 
   it('should call onClick when clicked', () => {
