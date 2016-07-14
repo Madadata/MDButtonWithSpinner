@@ -1,5 +1,6 @@
 # MDButtonWithSpinner
 [![Build Status](https://travis-ci.org/Madadata/MDButtonWithSpinner.svg?branch=master)](https://travis-ci.org/Madadata/MDButtonWithSpinner)
+[![Dependency Status](https://dependencyci.com/github/Madadata/MDButtonWithSpinner/badge)](https://dependencyci.com/github/Madadata/MDButtonWithSpinner)
 [![GitHub issues](https://img.shields.io/github/issues/Madadata/MDButtonWithSpinner.svg)](https://github.com/Madadata/MDButtonWithSpinner/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Madadata/MDButtonWithSpinner/master/LICENSE)
 [![GitHub version](https://badge.fury.io/gh/Madadata%2FMDButtonWithSpinner.svg)](https://badge.fury.io/gh/Madadata%2FMDButtonWithSpinner)
